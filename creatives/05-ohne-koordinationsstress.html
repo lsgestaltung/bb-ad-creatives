@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BB Ad 05 – Ohne Koordinationsstress</title>
+<link rel="stylesheet" href="../framework/bb-ads.css">
+<script>
+/* ===== HIER ANPASSEN ===== */
+window.AD = {
+  eyebrow:  "Kommt Ihnen das bekannt vor?",
+  headline: "Badsanierung ohne<br>Koordinationsstress.",
+  problems: ["Fünf Handwerker selbst anrufen", "Termine hin- und herschieben", "Niemand fühlt sich zuständig"],
+  solutionTitle: "Mit BB Bad &amp; Sanitär",
+  solutions: ["Ein Ansprechpartner", "Ein Vertrag, ein Zeitplan", "Fertiges Bad zur Übergabe"],
+  cta:      "Projekt besprechen",
+  footLeft:  "bb-komplettbad.de",
+  footRight: "Baden-Baden · 07221 9227260",
+  photos: { main: { src: "../assets/photos/Viterma-54.webp", focus: "50% 45%" } }
+};
+</script>
+<style>
+  .head { position: absolute; left: var(--pad); right: var(--pad); top: 168px; }
+  .cols { position: absolute; left: var(--pad); right: var(--pad); top: 404px; height: 664px;
+    display: grid; grid-template-columns: 1fr 392px; gap: 28px; }
+  .cols .photo-frame { height: 100%; }
+  .card--solution { background: var(--card); color: var(--foreground); margin-top: auto; padding: 34px 36px; }
+  .card--solution .title { font-size: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 18px; }
+  .card--solution .list li { font-size: 30px; font-weight: 600; color: var(--primary); }
+  .list--strike li { font-size: 30px; }
+  .cta { position: absolute; left: var(--pad); top: 1112px; }
+
+  html[data-format="9x16"] .head { top: 380px; }
+  html[data-format="9x16"] .cols { top: 640px; height: 760px; }
+  html[data-format="9x16"] .cta  { top: 1450px; }
+  /* Landscape: 3 Spalten – Text+Liste | Lösungskarte | Foto */
+  html[data-format="16x9"] .head { top: 170px; right: auto; width: 720px; }
+  html[data-format="16x9"] .head .headline { font-size: 64px; }
+  html[data-format="16x9"] .cols { left: var(--pad); right: var(--pad); top: 150px; height: 780px;
+    grid-template-columns: 720px 440px 1fr; gap: 40px; align-items: stretch; }
+  html[data-format="16x9"] .cols > .stack { padding-top: 260px; justify-content: flex-start; }
+  html[data-format="16x9"] .cols > .stack .card--solution { display: none; }
+  html[data-format="16x9"] .card--landscape { display: block; align-self: center; }
+  html[data-format="16x9"] .cta { top: 720px; }
+  .card--landscape { display: none; }
+
+</style>
+</head>
+<body class="preview">
+<div class="ad ad--dark">
+  <div class="topbar">
+    <img class="logo" src="../assets/logo/bb-logo-negative.svg" alt="BB Bad &amp; Sanitär">
+  </div>
+
+  <div class="head stack">
+    <span class="eyebrow" data-slot="eyebrow"></span>
+    <h1 class="headline headline--md" data-slot="headline"></h1>
+  </div>
+
+  <div class="cols">
+    <div class="stack" style="gap:28px">
+      <ul class="list list--strike" data-list="problems">
+        <li><span class="ico ico--x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span class="txt"></span></li>
+      </ul>
+      <div class="card card--solution">
+        <div class="title" data-slot="solutionTitle"></div>
+        <ul class="list" data-list="solutions" style="gap:16px">
+          <li><span class="ico ico--check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="txt"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card--solution card--landscape">
+      <div class="title" data-slot="solutionTitle"></div>
+      <ul class="list" data-list="solutions" style="gap:16px">
+        <li><span class="ico ico--check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="txt"></span></li>
+      </ul>
+    </div>
+    <div class="photo-frame">
+      <img class="photo" data-photo="main" alt="">
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn btn--accent"><span data-slot="cta"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </div>
+
+  <div class="footbar"><b data-slot="footLeft"></b><span data-slot="footRight"></span></div>
+</div>
+<script src="../framework/bb-ads.js"></script>
+</body>
+</html>

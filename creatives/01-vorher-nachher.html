@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BB Ad 01 – Vorher/Nachher</title>
+<link rel="stylesheet" href="../framework/bb-ads.css">
+<script>
+/* ===== HIER ANPASSEN ===== */
+window.AD = {
+  eyebrow:  "Badsanierung · Baden-Baden",
+  headline: "Aus alt wird<br>Ihr neues Bad.",
+  sub:      "Geplant, koordiniert, übergeben. <strong>Ein Ansprechpartner.</strong>",
+  cta:      "Projekt anfragen",
+  labelBefore: "Vorher",
+  labelAfter:  "Nachher",
+  footLeft:  "bb-komplettbad.de",
+  footRight: "07221 9227260",
+  photos: {
+    before: { src: "../assets/photos/Vorher-Gesamt.webp",  focus: "50% 50%" },
+    after:  { src: "../assets/photos/Nachher-Gesamt.webp", focus: "50% 50%" }
+  }
+};
+</script>
+<style>
+  .split { position: absolute; left: var(--pad); right: var(--pad); top: 172px; height: 640px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .split .photo-frame { height: 100%; }
+  .split .badge { position: absolute; left: 24px; top: 24px; }
+  .text { position: absolute; left: var(--pad); right: var(--pad); top: 864px; }
+
+  /* Story 9:16 */
+  html[data-format="9x16"] .split { top: 372px; height: 760px; }
+  html[data-format="9x16"] .text  { top: 1190px; }
+  /* Landscape 16:9: Text links, beide Fotos rechts */
+  html[data-format="16x9"] .split { left: auto; right: var(--pad); top: 150px; bottom: 150px; height: auto; width: 940px; }
+  html[data-format="16x9"] .text  { top: 200px; right: auto; width: 760px; }
+  html[data-format="16x9"] .text .headline { font-size: 88px; }
+  html[data-format="16x9"] .text .sub { font-size: 32px; }
+  html[data-format="16x9"] .topbar .eyebrow { display: none; }
+
+</style>
+</head>
+<body class="preview">
+<div class="ad">
+  <div class="topbar">
+    <img class="logo" src="../assets/logo/bb-logo-positive.svg" alt="BB Bad &amp; Sanitär">
+    <span class="eyebrow" data-slot="eyebrow"></span>
+  </div>
+
+  <div class="split">
+    <div class="photo-frame">
+      <img class="photo" data-photo="before" alt="">
+      <span class="badge badge--primary" data-slot="labelBefore"></span>
+    </div>
+    <div class="photo-frame">
+      <img class="photo" data-photo="after" alt="">
+      <span class="badge badge--accent" data-slot="labelAfter"></span>
+    </div>
+  </div>
+
+  <div class="text stack">
+    <h1 class="headline headline--md" data-slot="headline"></h1>
+    <p class="sub" data-slot="sub"></p>
+    <div class="row mt-16">
+      <a class="btn btn--accent"><span data-slot="cta"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+
+  <div class="footbar"><b data-slot="footLeft"></b><span data-slot="footRight"></span></div>
+</div>
+<script src="../framework/bb-ads.js"></script>
+</body>
+</html>

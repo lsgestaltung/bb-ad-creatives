@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BB Ad 02 – Komplettbad aus einer Hand</title>
+<link rel="stylesheet" href="../framework/bb-ads.css">
+<script>
+/* ===== HIER ANPASSEN ===== */
+window.AD = {
+  badge:    "Ein Ansprechpartner",
+  eyebrow:  "Komplettbadsanierung",
+  headline: "Ihr Komplettbad.<br>Aus einer Hand.",
+  chips:    ["Planung", "Sanitär", "Fliesen", "Elektro", "Trockenbau", "Übergabe"],
+  cta:      "Projekt besprechen",
+  footLeft:  "bb-komplettbad.de",
+  footRight: "Baden-Baden · 07221 9227260",
+  photos: { main: { src: "../assets/photos/P1000410.jpeg", focus: "58% 42%" } }
+};
+</script>
+<style>
+  .chips { display: flex; flex-wrap: wrap; gap: 14px; max-width: 900px; }
+  .scrim-bottom { background: linear-gradient(to top,
+    color-mix(in oklab, var(--primary) 97%, transparent) 0%,
+    color-mix(in oklab, var(--primary) 92%, transparent) 30%,
+    color-mix(in oklab, var(--primary) 60%, transparent) 46%,
+    transparent 57%); }
+
+  html[data-format="9x16"] .scrim-bottom { background: linear-gradient(to top,
+    color-mix(in oklab, var(--primary) 97%, transparent) 0%,
+    color-mix(in oklab, var(--primary) 92%, transparent) 34%,
+    color-mix(in oklab, var(--primary) 60%, transparent) 46%,
+    transparent 56%); }
+  html[data-format="16x9"] .scrim-bottom { display: none; }
+  html[data-format="16x9"] .photo { --focus: 62% 50%; }
+
+</style>
+</head>
+<body class="preview">
+<div class="ad ad--dark">
+  <img class="photo" data-photo="main" alt="">
+  <div class="scrim-top"></div>
+  <div class="scrim-left"></div>
+  <div class="scrim-bottom"></div>
+
+  <div class="topbar">
+    <img class="logo" src="../assets/logo/bb-logo-negative.svg" alt="BB Bad &amp; Sanitär">
+    <span class="badge badge--glass" data-slot="badge"></span>
+  </div>
+
+  <div class="content content--bottom stack">
+    <span class="eyebrow eyebrow--light" data-slot="eyebrow"></span>
+    <h1 class="headline headline--lg" data-slot="headline"></h1>
+    <div class="chips mt-8" data-chips="chips">
+      <span class="chip chip--glass"><span class="dot"></span><span class="txt"></span></span>
+    </div>
+    <div class="row mt-24">
+      <a class="btn btn--accent"><span data-slot="cta"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+
+  <div class="footbar"><b data-slot="footLeft"></b><span data-slot="footRight"></span></div>
+</div>
+<script src="../framework/bb-ads.js"></script>
+</body>
+</html>

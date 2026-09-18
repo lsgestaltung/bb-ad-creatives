@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BB Ad 03 – Wunschbad</title>
+<link rel="stylesheet" href="../framework/bb-ads.css">
+<script>
+/* ===== HIER ANPASSEN ===== */
+window.AD = {
+  eyebrow:  "Ihr neues Bad",
+  headline: "Endlich das Bad,<br>das zu Ihnen passt.",
+  sub:      "Persönlich geplant. Zuverlässig begleitet.",
+  cta:      "Jetzt Bad planen",
+  footLeft:  "bb-komplettbad.de",
+  footRight: "Baden-Baden",
+  photos: { main: { src: "../assets/photos/P1000413.jpeg", focus: "40% 45%" } }
+};
+</script>
+<style>
+  .scrim-bottom { background: linear-gradient(to top,
+    color-mix(in oklab, var(--primary) 96%, transparent) 0%,
+    color-mix(in oklab, var(--primary) 88%, transparent) 27%,
+    color-mix(in oklab, var(--primary) 50%, transparent) 43%,
+    transparent 55%); }
+  .content--bottom { bottom: 150px; }
+
+  html[data-format="9x16"] .scrim-bottom { background: linear-gradient(to top,
+    color-mix(in oklab, var(--primary) 96%, transparent) 0%,
+    color-mix(in oklab, var(--primary) 88%, transparent) 32%,
+    color-mix(in oklab, var(--primary) 50%, transparent) 44%,
+    transparent 54%); }
+  html[data-format="9x16"] .content--bottom { bottom: 400px; }
+  html[data-format="16x9"] .scrim-bottom { display: none; }
+  html[data-format="16x9"] .photo { --focus: 55% 50%; }
+
+</style>
+</head>
+<body class="preview">
+<div class="ad ad--dark">
+  <img class="photo" data-photo="main" alt="">
+  <div class="scrim-top"></div>
+  <div class="scrim-left"></div>
+  <div class="scrim-bottom"></div>
+
+  <div class="topbar">
+    <img class="logo" src="../assets/logo/bb-logo-negative.svg" alt="BB Bad &amp; Sanitär">
+  </div>
+
+  <div class="content content--bottom stack">
+    <span class="eyebrow eyebrow--light" data-slot="eyebrow"></span>
+    <h1 class="headline headline--lg" data-slot="headline"></h1>
+    <p class="sub sub--light" data-slot="sub"></p>
+    <div class="row mt-24">
+      <a class="btn btn--accent"><span data-slot="cta"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+
+  <div class="footbar"><b data-slot="footLeft"></b><span data-slot="footRight"></span></div>
+</div>
+<script src="../framework/bb-ads.js"></script>
+</body>
+</html>

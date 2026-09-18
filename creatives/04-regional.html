@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BB Ad 04 – Regional Baden-Baden + 40 km</title>
+<link rel="stylesheet" href="../framework/bb-ads.css">
+<script>
+/* ===== HIER ANPASSEN ===== */
+window.AD = {
+  badge:    "Baden-Baden + 40 km",
+  eyebrow:  "Ihre Badberater aus der Region",
+  headline: "Lukas &amp; Philipp.<br>Aus Baden-Baden.<br>Für Ihr Bad.",
+  towns:    ["Baden-Baden", "Bühl", "Rastatt", "Gaggenau", "Sinzheim", "Achern", "Gernsbach", "Kuppenheim"],
+  cta:      "Projekt anfragen",
+  footLeft:  "bb-komplettbad.de",
+  footRight: "Gernsbacher Str. 10–12 · Baden-Baden",
+  photos: { team: { src: "../assets/photos/team-lukas-philipp.jpg", focus: "50% 30%" } }
+};
+</script>
+<style>
+  .ad { background: var(--background); }
+  .hero { position: absolute; left: var(--pad); right: var(--pad); top: 168px; height: 500px; }
+  .hero .badge { position: absolute; left: 24px; bottom: 24px; }
+  .text { position: absolute; left: var(--pad); right: var(--pad); top: 716px; }
+  .towns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .towns .chip { font-size: 24px; padding: 14px 22px; }
+
+  html[data-format="9x16"] .hero { top: 372px; height: 620px; }
+  html[data-format="9x16"] .text { top: 1050px; }
+  html[data-format="16x9"] .hero { left: auto; right: var(--pad); top: 150px; bottom: 150px; height: auto; width: 940px; }
+  html[data-format="16x9"] .hero .photo { --focus: 50% 35%; }
+  html[data-format="16x9"] .text { top: 180px; right: auto; width: 780px; }
+  html[data-format="16x9"] .text .headline { font-size: 68px; }
+
+</style>
+</head>
+<body class="preview">
+<div class="ad">
+  <div class="topbar">
+    <img class="logo" src="../assets/logo/bb-logo-positive.svg" alt="BB Bad &amp; Sanitär">
+    <span class="badge badge--accent" data-slot="badge"></span>
+  </div>
+
+  <div class="hero photo-frame">
+    <img class="photo" data-photo="team" alt="">
+  </div>
+
+  <div class="text stack">
+    <span class="eyebrow" data-slot="eyebrow"></span>
+    <h1 class="headline headline--sm" data-slot="headline"></h1>
+    <div class="towns mt-8" data-chips="towns">
+      <span class="chip chip--sand"><span class="txt"></span></span>
+    </div>
+    <div class="row mt-16">
+      <a class="btn btn--accent"><span data-slot="cta"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+
+  <div class="footbar"><b data-slot="footLeft"></b><span data-slot="footRight"></span></div>
+</div>
+<script src="../framework/bb-ads.js"></script>
+</body>
+</html>
